@@ -1,0 +1,25 @@
+server:
+  server_id: "router_1"
+  name: "Routing Server 1"
+  tunnel_id: 1001
+  bind_address: "::"
+  bind_port: 51820
+  internal_ip: "192.168.1.251"
+  external_ip: "2408:8207:1a29:8960::c0a8:1fb"
+  egress_interface: "XXX"
+  log_file: "/var/log/routing_server_1.log"
+
+network_controller:
+  url: "http://211.71.65.211:8090"
+
+tunnel:
+  psk: "yUoLV+/1yaAeSGxCY/fRHIm1qb3oi4KSP57sRtB3WxE="
+  interface_name: "tun0"
+  tun_ipv4: "10.10.1.1"
+  tun_ipv6: "fd00:100::1"
+
+load_balancer:
+  url: "http://8.146.198.12:8080"
+
+metrics:
+  report_interval: 10

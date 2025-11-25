@@ -1,0 +1,17 @@
+server:
+  bind_address: "0.0.0.0"
+  bind_port: 8080
+  log_file: "/var/log/load_balancer.log"
+
+algorithm:
+  weights:
+    cpu: 0.30
+    memory: 0.20
+    bandwidth: 0.30
+    connections: 0.20
+  max_bandwidth_mbps: 1000
+  max_connections: 100
+  anti_flap_threshold: 0.05
+  anti_flap_hold_time: 30
+  metrics_ttl: 5
+

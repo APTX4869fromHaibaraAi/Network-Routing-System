@@ -1,0 +1,31 @@
+controller:
+  bind_address: "0.0.0.0"
+  bind_port: 8090
+  log_file: "/var/log/network_controller.log"
+  advertise_ip: "211.71.65.211"
+
+load_balancer:
+  domain: "sinet.top"
+  port: 8080
+  controller_id: "controller_1"
+
+ip_allocation:
+  base_network_ipv4: "10.100.0.0/16"
+  base_network_ipv6: "fd00:100::/32"
+  subnet_prefix_ipv4: 24
+  subnet_prefix_ipv6: 64
+  allocation_timeout: 3600
+  tun_ipv4_pool:
+    base: "10.10.100.0"
+    start: 1
+    end: 254
+  tun_ipv6_pool:
+    base: "fd00:100::"
+    start: 1
+    end: 65535
+
+security:
+  default_psk: "yUoLV+/1yaAeSGxCY/fRHIm1qb3oi4KSP57sRtB3WxE="
+
+tunnel:
+  default_port: 51820

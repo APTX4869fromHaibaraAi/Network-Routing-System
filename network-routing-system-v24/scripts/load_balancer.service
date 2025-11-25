@@ -1,0 +1,14 @@
+[Unit]
+Description=Load Balancer Server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/network-routing-system
+ExecStart=/usr/bin/python3 /opt/network-routing-system/load_balancer/server.py /etc/network-routing-system/load_balancer.yaml
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

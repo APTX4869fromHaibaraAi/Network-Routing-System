@@ -1,0 +1,14 @@
+[Unit]
+Description=Network Access Endpoint
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/network-routing-system
+ExecStart=/usr/bin/python3 /opt/network-routing-system/network_access_endpoint/endpoint.py /etc/network-routing-system/network_access_endpoint.yaml
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

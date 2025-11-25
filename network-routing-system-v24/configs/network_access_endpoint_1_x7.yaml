@@ -1,0 +1,20 @@
+endpoint:
+  endpoint_id: "endpoint_1"
+  name: "Network Access Endpoint 1"
+  log_file: "/var/log/network_access_endpoint_1.log"
+  wan_interfaces:
+    - {name: "wan0"}
+    - {name: "wan1"}
+
+tunnel:
+  psk: "yUoLV+/1yaAeSGxCY/fRHIm1qb3oi4KSP57sRtB3WxE="
+  interface_name: "tun0"
+  port: 51820
+  keepalive_interval: 0.3
+  routes:
+    - "211.71.74.0/24"
+    - "211.71.65.0/24"
+
+load_balancer:
+  url: "http://8.146.198.12:8080"
+  poll_interval: 10

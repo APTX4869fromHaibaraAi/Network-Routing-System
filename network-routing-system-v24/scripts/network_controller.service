@@ -1,0 +1,14 @@
+[Unit]
+Description=Network Controller
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/network-routing-system
+ExecStart=/usr/bin/python3 /opt/network-routing-system/network_controller/controller.py /etc/network-routing-system/network_controller.yaml
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

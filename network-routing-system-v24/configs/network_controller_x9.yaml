@@ -1,0 +1,22 @@
+controller:
+  bind_address: "0.0.0.0"
+  bind_port: 8090
+  log_file: "/var/log/network_controller.log"
+
+ip_allocation:
+  ip_allocation:
+  base_network_ipv4: "10.100.0.0/16"  # 默认分配给接入端
+  base_network_ipv6: "fd00:100::/32"   # 默认分配给接入端
+  router_base_network_ipv4: "10.10.0.0/16"  # 分配给路由器的子网
+  router_base_network_ipv6: "fd00:10::/32"   # 分配给路由器的子网
+  subnet_prefix_ipv4: 24
+  subnet_prefix_ipv6: 64
+  tun_ipv4_pool: { base: "10.10.0.0", start: 1, end: 254 }
+  tun_ipv6_pool: { base: "fd00:10::", start: 1, end: 254 }
+  allocation_timeout: 3600
+
+security:
+  default_psk: "yUoLV+/1yaAeSGxCY/fRHIm1qb3oi4KSP57sRtB3WxE="
+
+tunnel:
+  default_port: 51820

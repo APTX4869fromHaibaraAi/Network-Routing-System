@@ -1,0 +1,9 @@
+load_balancer:
+  domain: "sinet.top"   # 这里只写域名，不写 IP
+  port: 8080            # LB 监听端口
+
+business:
+  id: "biz-1"           # 业务服务器 ID，自定义
+  ip: "211.71.74.218"   # 业务服务器自己的 IPv4（你想让 NAE 来访问的那个）
+  report_interval: 60   # 成功后每隔多少秒再上报一次
+  retry_interval: 3    # 失败时每隔多少秒重试
